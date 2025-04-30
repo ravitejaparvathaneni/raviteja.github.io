@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raviteja | Physical Design Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --main-color: #0077cc;
+            --light-blue: #eaf6ff;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--light-blue);
+            color: #333;
+            margin: 0;
+        }
+        header {
+            background: var(--main-color);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin-bottom: 0.2rem;
+        }
+        section {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 1.5rem 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: var(--main-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.3rem;
+        }
+        ul {
+            padding-left: 1.5rem;
+            line-height: 1.8;
+        }
+        a {
+            color: var(--main-color);
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Raviteja</h1>
+        <p>VLSI Physical Design Engineer • RTL to GDSII • OpenLane + Sky130</p>
+    </header>
+
+    <section>
+        <h2>🔷 Project: TetraNyteCore Physical Design Implementation</h2>
+        <ul>
+            <li>Worked on full physical design flow for <strong>TetraNyteCore</strong>, a multithreaded RISC-V core.</li>
+            <li>Implemented synthesis to GDSII using OpenLane and Sky130 PDK.</li>
+            <li>Setup environment, configured OpenLane project files, and customized <code>config.tcl</code>.</li>
+            <li>Targeted flat and hierarchical Verilog netlists generated from Chisel → FIRRTL → Yosys pipeline.</li>
+            <li>Integrated timing constraints using custom <code>design.sdc</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>💼 Responsibilities</h2>
+        <ul>
+            <li>Defined floorplan: set core utilization, macro placement, and IO pin location.</li>
+            <li>Created PDN (Power Distribution Network) grid with custom width, pitch, spacing.</li>
+            <li>Performed placement, routing, and DRC/LVS validation using OpenRoad tools.</li>
+            <li>Debugged clock tree issues, refined timing constraints and synthesized netlist quality.</li>
+            <li>Produced final GDSII and netlist outputs for fabrication readiness.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>⚙️ Tools and Technologies</h2>
+        <ul>
+            <li><strong>OpenLane v1.1.1</strong> – full RTL to GDSII automation</li>
+            <li><strong>Sky130 PDK</strong> – standard cell libraries (HD and HS)</li>
+            <li><strong>Yosys</strong> – logic synthesis of Chisel RTL outputs</li>
+            <li><strong>KLayout</strong> – GDS inspection and DRC rule overlay</li>
+            <li><strong>Magic</strong> – physical verification and LEF/GDS management</li>
+            <li><strong>Ubuntu 22.04</strong> – primary development platform</li>
+            <li><strong>Verilator</strong> – simulation of synthesized SystemVerilog models</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>🎯 Contributions</h2>
+        <ul>
+            <li>Configured project files and resolved missing PDK dependencies (Sky130A config path issues).</li>
+            <li>Analyzed floorplan density and congestion hotspots and adjusted cell placement rules accordingly.</li>
+            <li>Supported integration with synthesized Chisel models and ensured successful compatibility with OpenLane.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>🚧 Challenges Solved</h2>
+        <ul>
+            <li>Resolved missing PDK path errors by correcting <code>PDK_ROOT</code> and OpenLane folder structure.</li>
+            <li>Debugged Verilog include issues by linking correct flat netlist file for <code>TetraNyteCore_synth.v</code>.</li>
+            <li>Resolved clock port and timing annotation inconsistencies during OpenLane floorplan and CTS stages.</li>
+        </ul>
+    </section>
+
+
+    <footer>
+        &copy; 2025 Raviteja | Physical Design Portfolio </a>
+    </footer>
+
+</body>
+</html>
