@@ -1,122 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Raviteja | Physical Design Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        :root {
-            --main-color: #0077cc;
-            --light-blue: #eaf6ff;
-        }
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--light-blue);
-            color: #333;
-            margin: 0;
-        }
-        header {
-            background: var(--main-color);
-            color: white;
-            padding: 2.5rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            margin-bottom: 0.2rem;
-        }
-        section {
-            max-width: 960px;
-            margin: 2rem auto;
-            padding: 1.5rem 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.08);
-        }
-        h2 {
-            color: var(--main-color);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.3rem;
-        }
-        ul {
-            padding-left: 1.5rem;
-            line-height: 1.8;
-        }
-        a {
-            color: var(--main-color);
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.9rem;
-            color: #777;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raviteja | Physical Design Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4f8fc;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    header {
+      background: #0f4c81;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #cce3f6;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: #0f4c81;
+      margin-bottom: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+    }
+    th {
+      background: #e0ecf7;
+    }
+    .code-block {
+      background: #1e1e2f;
+      color: #dcdcdc;
+      padding: 1rem;
+      border-radius: 6px;
+      font-family: 'Roboto Mono', monospace;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+    footer {
+      background: #0f4c81;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Raviteja</h1>
-        <p>VLSI Physical Design Engineer • RTL to GDSII • OpenLane + Sky130</p>
-    </header>
+<header>
+  <h1>Raviteja</h1>
+  <p>Physical Design Engineer | Sky130 • OpenLane • GDSII</p>
+</header>
 
-    <section>
-        <h2>🔷 Project: TetraNyteCore Physical Design Implementation</h2>
-        <ul>
-            <li>Worked on full physical design flow for <strong>TetraNyteCore</strong>, a multithreaded RISC-V core.</li>
-            <li>Implemented synthesis to GDSII using OpenLane and Sky130 PDK.</li>
-            <li>Setup environment, configured OpenLane project files, and customized <code>config.tcl</code>.</li>
-            <li>Targeted flat and hierarchical Verilog netlists generated from Chisel → FIRRTL → Yosys pipeline.</li>
-            <li>Integrated timing constraints using custom <code>design.sdc</code>.</li>
-        </ul>
-    </section>
+<div class="container">
+  <div class="card">
+    <h2>📌 Project Summary</h2>
+    <p>
+      I worked as a Physical Design Engineer responsible for place & route, floorplanning, and GDSII generation of the <strong>OctoNyteCPU</strong>. This included integrating flattened RTL, defining constraints, and optimizing layout using <strong>OpenLane 2</strong> on the <strong>Sky130 HD PDK</strong>.
+    </p>
+  </div>
 
-    <section>
-        <h2>💼 Responsibilities</h2>
-        <ul>
-            <li>Defined floorplan: set core utilization, macro placement, and IO pin location.</li>
-            <li>Created PDN (Power Distribution Network) grid with custom width, pitch, spacing.</li>
-            <li>Performed placement, routing, and DRC/LVS validation using OpenRoad tools.</li>
-            <li>Debugged clock tree issues, refined timing constraints and synthesized netlist quality.</li>
-            <li>Produced final GDSII and netlist outputs for fabrication readiness.</li>
-        </ul>
-    </section>
+  <div class="card">
+    <h2>📊 Floorplan Report</h2>
+    <ul>
+      <li><strong>PDK Used:</strong> sky130_fd_sc_hd</li>
+      <li><strong>Site Size:</strong> 0.46 μm × 2.72 μm</li>
+      <li><strong>Utilization:</strong> 30%</li>
+      <li><strong>Rows:</strong> 168 rows × 997 sites</li>
+    </ul>
 
-    <section>
-        <h2>⚙️ Tools and Technologies</h2>
-        <ul>
-            <li><strong>OpenLane v1.1.1</strong> – full RTL to GDSII automation</li>
-            <li><strong>Sky130 PDK</strong> – standard cell libraries (HD and HS)</li>
-            <li><strong>Yosys</strong> – logic synthesis of Chisel RTL outputs</li>
-            <li><strong>KLayout</strong> – GDS inspection and DRC rule overlay</li>
-            <li><strong>Magic</strong> – physical verification and LEF/GDS management</li>
-            <li><strong>Ubuntu 22.04</strong> – primary development platform</li>
-            <li><strong>Verilator</strong> – simulation of synthesized SystemVerilog models</li>
-        </ul>
-    </section>
+    <h3>🔹 Area Information</h3>
+    <table>
+      <tr><th>Region</th><th>Coordinates (μm)</th><th>Total Area (μm²)</th></tr>
+      <tr><td>Die Area</td><td>0.0 0.0 → 469.785 480.505</td><td>225,712.67</td></tr>
+      <tr><td>Core Area</td><td>5.52 10.88 → 464.14 467.84</td><td>214,918.55</td></tr>
+    </table>
 
-    <section>
-        <h2>🎯 Contributions</h2>
-        <ul>
-            <li>Configured project files and resolved missing PDK dependencies (Sky130A config path issues).</li>
-            <li>Analyzed floorplan density and congestion hotspots and adjusted cell placement rules accordingly.</li>
-            <li>Supported integration with synthesized Chisel models and ensured successful compatibility with OpenLane.</li>
-        </ul>
-    </section>
+    <h3>🔹 Cell Distribution</h3>
+    <table>
+      <tr><th>Cell Type</th><th>Count</th><th>Area (μm²)</th></tr>
+      <tr><td>Buffer</td><td>1</td><td>3.75</td></tr>
+      <tr><td>Inverter</td><td>79</td><td>296.53</td></tr>
+      <tr><td>Sequential</td><td>1120</td><td>23702.73</td></tr>
+      <tr><td>Multi-input Comb.</td><td>3862</td><td>39131.28</td></tr>
+      <tr><th>Total</th><th>5062</th><th>63,134.30</th></tr>
+    </table>
+  </div>
 
-    <section>
-        <h2>🚧 Challenges Solved</h2>
-        <ul>
-            <li>Resolved missing PDK path errors by correcting <code>PDK_ROOT</code> and OpenLane folder structure.</li>
-            <li>Debugged Verilog include issues by linking correct flat netlist file for <code>TetraNyteCore_synth.v</code>.</li>
-            <li>Resolved clock port and timing annotation inconsistencies during OpenLane floorplan and CTS stages.</li>
-        </ul>
-    </section>
+  <div class="card">
+    <h2>📁 Output Files</h2>
+    <ul>
+      <li><strong>DEF File:</strong> <code>13-openroad-floorplan/OctoNyteCPU.def</code></li>
+      <li><strong>SDC File:</strong> <code>13-openroad-floorplan/OctoNyteCPU.sdc</code></li>
+      <li><strong>Powered Netlist:</strong> <code>13-openroad-floorplan/OctoNyteCPU.pnl.v</code></li>
+      <li><strong>ODB Database:</strong> <code>13-openroad-floorplan/OctoNyteCPU.odb</code></li>
+    </ul>
+  </div>
 
+  <div class="card">
+    <h2>📂 View GDS</h2>
+    <p>You can visualize the final layout using <strong>KLayout</strong> with the following command:</p>
+    <div class="code-block">klayout 56-magic-streamout/OctoNyteCPU.gds</div>
+  </div>
+</div>
 
-    <footer>
-        &copy; 2025 Raviteja | Physical Design Portfolio </a>
-    </footer>
+<footer>
+  &copy; 2025 Raviteja • Physical Design Portfolio • Built for GitHub Pages
+</footer>
 
 </body>
 </html>
