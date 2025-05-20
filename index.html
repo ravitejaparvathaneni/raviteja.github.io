@@ -93,9 +93,24 @@
   </div>
 
   <div class="card">
-    <h2>📂 View GDS</h2>
-    <p>You can visualize the final layout using <strong>KLayout</strong> with the following command:</p>
-    <div class="code-block">klayout 56-magic-streamout/OctoNyteCPU.gds</div>
+    <h2>📂 Configurations</h2>
+    <p> To compile the TetraNyteCoreCPU I used the following configuration before running using openlane </p>
+    <div class="code-block">
+      {
+        "DESIGN_NAME": "OctoNyteCPU",
+        "VERILOG_FILES": [
+          "../OctoNyte-Teja/RTL/Chisel/generators/generated/verilog_hierarchical_timed_rtl/OctoNyteCPU.v"
+        ],
+        "CLOCK_PORT": "clock",
+        "CLOCK_PERIOD": 5,
+        "FP_CORE_UTIL": 30,
+        "FP_PDN_VPITCH": 7.0,
+        "FP_PDN_HPITCH": 7.0,
+        "PNR_SDC_FILE": "common_constraints/design.sdc",
+        "SIGNOFF_SDC_FILE": "common_constraints/design.sdc",
+        "SYNTH_READ_BLACKBOX_LIB": true
+      }
+    </div>
   </div>
 
   <div class="card">
@@ -138,7 +153,7 @@
   <div class="card">
     <h2>📂 View GDS</h2>
     <p>Below is a visual of the final layout using <strong>KLayout</strong></p>
-    <img src="cpuchip.jpg"></img>
+    <img class="container" src="cpuchip.jpg"></img>
   </div>
 </div>
 
