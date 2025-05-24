@@ -75,6 +75,55 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+      details.analysis-block {
+    background: #f5f9ff;
+    border-left: 4px solid #005cbf;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  details.analysis-block summary {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #003366;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+
+  details.analysis-block table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+
+  details.analysis-block th, details.analysis-block td {
+    border: 1px solid #ccc;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+
+  details.analysis-block th {
+    background-color: #d6eaff;
+    color: #003366;
+  }
+
+  .note {
+    background: #fffbe6;
+    border-left: 4px solid #f0ad4e;
+    padding: 0.75rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  code {
+    background-color: #eef;
+    padding: 2px 4px;
+    font-family: monospace;
+    border-radius: 4px;
+  }
   </style>
 </head>
 <body>
@@ -150,6 +199,84 @@
       <li><strong>Tcl scripting and Makefile-based flow:</strong> <code>Automates OpenLane tool steps using scripts.</code></li>
     </ul>
   </div>
+
+  <details class="analysis-block" open>
+  <summary>🧠 Final Post-Layout Analysis (OpenLane v2 - sky130_fd_sc_hd)</summary>
+
+  <h3>⏱️ 1. Timing Summary</h3>
+  <table>
+    <tr><th>Parameter</th><th>Value (nom_tt_025C_1v80)</th></tr>
+    <tr><td>Clock Name</td><td><code>clock</code></td></tr>
+    <tr><td>Period</td><td>15.00 ns</td></tr>
+    <tr><td>Minimum Achievable Period</td><td>8.86 ns (fmax ≈ 112.88 MHz)</td></tr>
+    <tr><td>Worst Setup Slack</td><td>6.14 ns ✅</td></tr>
+    <tr><td>Worst Hold Slack</td><td>0.478 ns ✅</td></tr>
+    <tr><td>Setup Skew</td><td>0.242 ns</td></tr>
+    <tr><td>Hold Skew</td><td>0.242 ns</td></tr>
+    <tr><td>Source Latency (Setup)</td><td>0.871 ns</td></tr>
+    <tr><td>Target Latency (Setup)</td><td>0.629 ns</td></tr>
+  </table>
+  <p>✔️ All timing checks passed. Skews and slacks are acceptable.</p>
+
+  <h3>⚡ 2. Power Report</h3>
+  <table>
+    <tr><th>Group</th><th>Internal Power</th><th>Switching</th><th>Leakage</th><th>Total</th><th>% Total</th></tr>
+    <tr><td>Sequential</td><td>3.10 mW</td><td>0.12 mW</td><td>~0 nW</td><td>3.22 mW</td><td>47.5%</td></tr>
+    <tr><td>Combinational</td><td>0.40 mW</td><td>0.48 mW</td><td>~0 nW</td><td>0.88 mW</td><td>13.0%</td></tr>
+    <tr><td>Clock Network</td><td>1.33 mW</td><td>1.35 mW</td><td>~0 nW</td><td>2.68 mW</td><td>39.5%</td></tr>
+    <tr><td><strong>Total</strong></td><td colspan="4"><strong>6.77 mW</strong></td><td>100%</td></tr>
+  </table>
+
+  <h3>🧮 3. Area Comparison</h3>
+  <table>
+    <tr><th>Source</th><th>Area (µm²)</th><th>Notes</th></tr>
+    <tr><td>RTL Estimation</td><td>50,880.05</td><td>From synthesis report</td></tr>
+    <tr><td>Core Area (PnR)</td><td>2,138,670.84</td><td>From floorplan log</td></tr>
+    <tr><td>Die Area (PnR)</td><td>2,120,935.87</td><td>From floorplan log</td></tr>
+    <tr><td>Sequential Cell Area</td><td>21,780.89</td><td>≈ 43% of RTL area</td></tr>
+  </table>
+
+  <h3>🧱 4. Cell Type Breakdown</h3>
+  <table>
+    <tr><th>Type</th><th>Count</th><th>Area (µm²)</th></tr>
+    <tr><td>Buffer</td><td>1</td><td>3.75</td></tr>
+    <tr><td>Inverter</td><td>79</td><td>296.53</td></tr>
+    <tr><td>Sequential</td><td>1120</td><td>23,702.73</td></tr>
+    <tr><td>Combinational</td><td>3862</td><td>39,131.28</td></tr>
+    <tr><td><strong>Total</strong></td><td>5062</td><td><strong>63,134.30</strong></td></tr>
+  </table>
+
+  <h3>📉 5. Violation Summary</h3>
+  <table>
+    <tr><th>Check</th><th>Status</th><th>Details</th></tr>
+    <tr><td>LVS</td><td>✅ Passed</td><td>Layout matches schematic</td></tr>
+    <tr><td>DRC</td><td>❌ Failed</td><td>3 KLayout errors, 0 Magic DRC</td></tr>
+    <tr><td>Antenna</td><td>❌ Failed</td><td>4 pin + 4 net violations</td></tr>
+  </table>
+  <div class="note">
+    Inspect violations at <code>74-misc-reportmanufacturability/</code> in KLayout or Magic.
+  </div>
+
+  <h3>📊 6. Clock Tree Report</h3>
+  <ul>
+    <li>Virtual clock not generated physically</li>
+    <li>Setup/Hold skew: 0.242 ns</li>
+    <li>Source Latency: 0.871 ns</li>
+  </ul>
+
+  <h3>🧰 7. Tool Resources (STA)</h3>
+  <table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr><td>Runtime</td><td>9.36 sec</td></tr>
+    <tr><td>CPU Peak</td><td>109.4%</td></tr>
+    <tr><td>Memory Peak</td><td>89 MiB</td></tr>
+    <tr><td>Threads</td><td>1</td></tr>
+  </table>
+
+  <h3>✅ Conclusion</h3>
+  <p>This project meets synthesis, STA, and LVS goals with good power and timing. Minor DRC/antenna issues remain to be fixed.</p>
+</details>
+
 
   <div class="card">
     <h2>📂 View GDS</h2>
