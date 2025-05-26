@@ -203,7 +203,8 @@
     </ul>
   </div>
 
-  <details class="analysis-block" open>
+<!--   <details class="analysis-block" open> -->
+  <div class="card">
   <summary>🧠 Final Post-Layout Analysis (OpenLane v2 - sky130_fd_sc_hd)</summary>
 
   <h3>⏱️ 1. Timing Summary</h3>
@@ -223,7 +224,9 @@
   <div class="note">
     Source: <code>54-openroad-stapostpnr/nom_tt_025C_1v80/clock.rpt</code>
   </div>
-
+  </div>
+  
+  <div class="card">
   <h3>⚡ 2. Power Report</h3>
   <table>
     <tr><th>Group</th><th>Internal Power</th><th>Switching</th><th>Leakage</th><th>Total</th><th>% Total</th></tr>
@@ -235,7 +238,9 @@
   <div class="note">
     Source: <code>54-openroad-stapostpnr/nom_tt_025C_1v80/report_power.rpt</code>
   </div>
-
+  </div>
+  
+  <div class="card">
   <h3>🧮 3. Area Comparison</h3>
   <table>
     <tr><th>Source</th><th>Area (µm²)</th><th>Notes</th></tr>
@@ -249,7 +254,9 @@
     • RTL Area: <code>06-yosys-synthesis/reports/stat.rpt</code> <br/>
     • Layout Area: <code>13-openroad-floorplan/openroad-floorplan.log</code>
   </div>
-
+  </div>
+  
+  <div class="card">
   <h3>🧱 4. Cell Type Breakdown</h3>
   <table>
     <tr><th>Type</th><th>Count</th><th>Area (µm²)</th></tr>
@@ -259,7 +266,9 @@
     <tr><td>Combinational</td><td>3862</td><td>39,131.28</td></tr>
     <tr><td><strong>Total</strong></td><td>5062</td><td><strong>63,134.30</strong></td></tr>
   </table>
-
+  </div>
+  
+  <div class="card">
   <h3>📉 5. Violation Summary</h3>
   <table>
     <tr><th>Check</th><th>Status</th><th>Details</th></tr>
@@ -270,7 +279,9 @@
   <div class="note">
     Inspect violations at <code>74-misc-reportmanufacturability/</code> in KLayout or Magic.
   </div>
-
+  </div>
+  
+  <div class="card">
   <h3>📊 6. Clock Tree Report</h3>
   <ul>
     <li>Virtual clock not generated physically</li>
@@ -280,7 +291,9 @@
   <div class="note">
     Source: <code>clock.rpt (under 54-openroad-stapostpnr/...)</code>
   </div>
-
+  </div>
+  
+  <div class="card">
   <h3>🧰 7. Tool Resources (STA)</h3>
   <table>
     <tr><th>Metric</th><th>Value</th></tr>
@@ -292,7 +305,9 @@
   <div class="note">
     Source: <code>sta.process_stats.json</code>
   </div>
-
+  </div>
+  
+  <div class="card">
   <h3>📏 8. Wirelength Analysis</h3>
   <table>
     <tr><th>Metric</th><th>Value</th></tr>
@@ -309,8 +324,10 @@
     OpenROAD flagged the net <code>_branchUnit_io_taken</code> as especially long and possibly routing inefficient. This is common in CPUs with wide buses or control signal networks.
   </div>
   <p>This project meets synthesis, STA, and LVS goals with good power and timing. Minor DRC/antenna issues remain to be fixed.</p>
-</details>
-
+<!-- </details> -->
+  </div>
+  
+  <div class="card">
   <section id="rtl-vs-pnr-analysis" style="padding: 2rem; background-color: #f4faff; color: #222; border-radius: 10px; margin-bottom: 2rem;">
   <h2 style="color: #004080;">📐 Timed RTL vs Final Placed/Wired Comparison</h2>
   <p>This section addresses the professor's requirement for analyzing RTL synthesis versus final post-layout characteristics.</p>
@@ -344,7 +361,7 @@
     <li><strong>Target Latency:</strong> 0.629 ns</li>
   </ul>
 </section>
-
+  </div>
 
   <div class="card">
     <h2>📂 View GDS</h2>
