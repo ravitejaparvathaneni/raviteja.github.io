@@ -187,8 +187,9 @@
       <tr><td>Multi-input Comb.</td><td>3862</td><td>39131.28</td></tr>
       <tr><th>Total</th><th>5062</th><th>63,134.30</th></tr>
     </table>
-      
-<!--     <li><strong>Most of these analysis were from:</strong> <code>13-openroad-floorplan/openroad-floorplan.log</code></li> -->
+    <div class="note">
+      Source: <code>13-openroad-floorplan/openroad-floorplan.log</code>
+    </div>
   </div>
 
   <div class="card">
@@ -219,6 +220,9 @@
     <tr><td>Target Latency (Setup)</td><td>0.629 ns</td></tr>
   </table>
   <p>✔️ All timing checks passed. Skews and slacks are acceptable.</p>
+  <div class="note">
+    Source: <code>54-openroad-stapostpnr/nom_tt_025C_1v80/clock.rpt</code>
+  </div>
 
   <h3>⚡ 2. Power Report</h3>
   <table>
@@ -228,6 +232,9 @@
     <tr><td>Clock Network</td><td>1.33 mW</td><td>1.35 mW</td><td>~0 nW</td><td>2.68 mW</td><td>39.5%</td></tr>
     <tr><td><strong>Total</strong></td><td colspan="4"><strong>6.77 mW</strong></td><td>100%</td></tr>
   </table>
+  <div class="note">
+    Source: <code>54-openroad-stapostpnr/nom_tt_025C_1v80/report_power.rpt</code>
+  </div>
 
   <h3>🧮 3. Area Comparison</h3>
   <table>
@@ -237,6 +244,11 @@
     <tr><td>Die Area (PnR)</td><td>2,120,935.87</td><td>From floorplan log</td></tr>
     <tr><td>Sequential Cell Area</td><td>21,780.89</td><td>≈ 43% of RTL area</td></tr>
   </table>
+  <div class="note">
+    Sources: <br/>
+    • RTL Area: <code>06-yosys-synthesis/reports/stat.rpt</code> <br/>
+    • Layout Area: <code>13-openroad-floorplan/openroad-floorplan.log</code>
+  </div>
 
   <h3>🧱 4. Cell Type Breakdown</h3>
   <table>
@@ -265,6 +277,9 @@
     <li>Setup/Hold skew: 0.242 ns</li>
     <li>Source Latency: 0.871 ns</li>
   </ul>
+  <div class="note">
+    Source: <code>clock.rpt (under 54-openroad-stapostpnr/...)</code>
+  </div>
 
   <h3>🧰 7. Tool Resources (STA)</h3>
   <table>
@@ -274,6 +289,9 @@
     <tr><td>Memory Peak</td><td>89 MiB</td></tr>
     <tr><td>Threads</td><td>1</td></tr>
   </table>
+  <div class="note">
+    Source: <code>sta.process_stats.json</code>
+  </div>
 
   <h3>📏 8. Wirelength Analysis</h3>
   <table>
@@ -282,6 +300,9 @@
     <tr><td>Top Longest Net (example)</td><td>_branchUnit_io_taken → 102 pins</td></tr>
     <tr><td>Routing Notes</td><td>Some long nets flagged for optimization</td></tr>
   </table>
+  <div class="note">
+    Source: <code>49-odb-reportwirelength/wire_lengths.csv</code>
+  </div>
 
     
   <div class="note">
@@ -322,8 +343,6 @@
     <li><strong>Source Latency:</strong> 0.871 ns</li>
     <li><strong>Target Latency:</strong> 0.629 ns</li>
   </ul>
-
-  <p><strong>✔️ Conclusion:</strong> Timing and area metrics from RTL synthesis and final layout match expectations. Design successfully meets performance goals with positive slack and minimal skew. This fulfills all professor requirements for final evaluation.</p>
 </section>
 
 
